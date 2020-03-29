@@ -1,0 +1,73 @@
+<h4>Movie details</h4>
+<hr class="my-4">
+
+<div class="jumbotron bg-light">
+
+   
+    <div class="row">
+        <div class="col-md-6">
+            <h1 class="display-4">{{currentMovie.Title}} ({{currentMovie.Year}})</h1>
+        </div>
+        <div class="col-md-6">
+            <img src="{{currentMovie.Poster}}" alt="{{currentMovie.Title}}"  class="img-thumbnail">  
+        </div>
+    </div>
+
+
+    <p>{{movieDetails.Plot}}</p>
+    <hr class="my-4">
+
+    <div *ngIf="isValid(movieDetails.imdbRating)">
+        <div class="row">
+            <div class="col-md-6">
+                Imdb Rating: 
+                <img src="assets/images/star.png" class="img-thumbnail" width="25" height="25">
+                {{movieDetails.imdbRating}}
+            </div>
+            <div class="col-md-6">
+                Votes: {{movieDetails.imdbVotes}}
+            </div>
+        </div>
+        <hr class="my-4">
+    </div>
+   
+    <div *ngIf="isValid(movieDetails.Director)" >
+        <h5>Director</h5>
+        {{movieDetails.Director}}
+        <hr class="my-4">
+    </div>
+    <div *ngIf="isValid(movieDetails.Writer)" >
+        <h5>Writers</h5>
+        {{movieDetails.Writer}}
+        <hr class="my-4">
+    </div>
+    <div *ngIf="isValid(movieDetails.Actors)" >
+        <h5>Stars</h5>
+        {{movieDetails.Actors}}
+        <hr class="my-4">
+    </div>
+    <div *ngIf="isValid(movieDetails.Awards)" >
+        <h5>Awards</h5>
+        {{movieDetails.Awards}}
+        <hr class="my-4">
+    </div>
+    <div *ngIf="isValid(movieDetails.Country)" >
+        <h5>Country</h5>
+        {{movieDetails.Country}}
+        <hr class="my-4">
+    </div>
+    <h5>Ratings</h5>
+    <table class="table table-borderless">
+        <tbody>
+            <tr *ngFor="let movieRatings of currentMovieRatings" >
+                <td>{{movieRatings.source}}</td>
+                <td>{{movieRatings.value}}</td>
+            </tr>  
+        </tbody>
+    </table>
+    <hr class="my-4">
+    <div *ngIf="isValid(movieDetails.Runtime)" >
+        <h5>Runtime</h5>
+        {{movieDetails.Runtime}}
+    </div>   
+</div>

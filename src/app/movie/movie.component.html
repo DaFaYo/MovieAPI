@@ -1,0 +1,27 @@
+<div class="row">
+    <div class="col-md-6">
+        <input type="text" #keyword 
+            class="form-control-lg" placeholder="movie name...">
+        <button class="btn btn-primary"
+            (click)="searchMovies(keyword.value)" >Find Movies</button>    
+        <table class="table table-striped">
+            <tr>
+                <th>Name</th>
+                <th>Year</th>
+                <th>Poster</th>
+            </tr>
+            <tr (click)="getMovieDetails(movie)"
+                *ngFor="let movie of movies$ | async">
+                <td>{{movie.Title}}</td>
+                <td>{{movie.Year}}</td>
+                <td><img src="{{movie.Poster}}" alt="{{movie.Title}}" width="100"></td>
+            </tr>
+        </table>
+    </div>
+    <div class="col-md-6" *ngIf="currentMovieDetails$ | async as movieDetails">
+        <app-movie-details [movieDetails]="movieDetails"
+         [currentMovie]="currentMovie"                    
+         [currentMovieRatings]="currentMovieRatings">
+        </app-movie-details>
+    </div>  
+</div>
