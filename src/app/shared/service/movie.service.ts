@@ -13,7 +13,7 @@ export class MovieService {
 
 
   private currentMovieRatings: MovieRatings[];
-  private url: string = "http://www.omdbapi.com/?apikey=1c5632f1&";
+  private url: string = "https://www.omdbapi.com/?apikey=1c5632f1&";
   constructor(private http: HttpClient) { }
 
   searchMovies(keyword): Observable<Movie[]> {
