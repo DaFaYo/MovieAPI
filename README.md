@@ -2,6 +2,12 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.7.
 
+Simple GUI that uses the Open Movie Database API: http://www.omdbapi.com/
+
+To see it running, go to: https://dafayo.github.io/MovieAPI/
+
+You can search fo a movie. By clicking on a movie, you can see the movie details.
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
